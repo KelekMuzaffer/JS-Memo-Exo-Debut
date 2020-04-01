@@ -12,3 +12,4 @@ jsonDatas.forEach(function(element) {
 	element.displayType=myTable[element.type];
 	console.log(element);
 });
+

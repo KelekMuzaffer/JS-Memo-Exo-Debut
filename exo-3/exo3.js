@@ -1,14 +1,27 @@
 // you can write js here
 console.log('exo-3');
 
-var wrongchoice = 'You must be choice rock or paper or scissor'
-let rock = "rock" ;
-let paper = "paper";
-let scissor = "scissor";
-let bomb = "bomb";
-let computerInput = [rock , paper , scissor];
+const wrongchoice = 'You must be choice rock or paper or scissor'
+const rock = "rock" ;
+const paper = "paper";
+const scissor = "scissor";
+const bomb = "bomb";
+const computerInput = [rock , paper , scissor];
 
  function getUserChoice(userInput){
+    //  regarder le switch case
+    // switch(userInput){
+    //         case rock :
+    //            return rock;
+    //         case paper :
+    //            return paper;
+    //         case scissor :
+    //            return scissor;
+    //         case bomb :
+    //            return bomb;
+    //     default: wrongchoice;
+    //   }
+
      if (userInput === rock) {
          return rock
      }
@@ -21,10 +34,8 @@ let computerInput = [rock , paper , scissor];
      if (userInput === bomb) {
          return bomb
      }
-     else
-     {
+
          return wrongchoice
-     }
 }
 
 
@@ -35,20 +46,21 @@ function getComputerChoise() {
 
 
 function determineWinner(userChoice,computerChoice){
+     // switchcase avec terner
 
-     let tied = "Pas de vainqueur , on rejoue ?"
-     let won = " Je suis trop fort"
-    let lost = " Ta eu de la chance, on rejoue?"
+     const tied = "Pas de vainqueur , on rejoue ?";
+     const won = " Je suis trop fort";
+    const lost = " Ta eu de la chance, on rejoue?";
 
      if (userChoice === computerChoice) {
-         return tied
+         return tied;
      }
     if (userChoice === bomb) {
-         return won
+         return won;
       }
      if ( userChoice === rock ){
          if (computerChoice === scissor){
-             return won
+             return won;
          }
          else {
              return lost
@@ -56,7 +68,7 @@ function determineWinner(userChoice,computerChoice){
      }
      if (userChoice === paper){
          if (computerChoice === rock){
-             return won
+             return won;
          }
          else {
              return lost
@@ -64,7 +76,7 @@ function determineWinner(userChoice,computerChoice){
      }
      if (userChoice === scissor){
          if (computerChoice === paper){
-             return won
+             return won;
          }
          else {
              return lost
@@ -73,7 +85,9 @@ function determineWinner(userChoice,computerChoice){
 }
 
 function playGame() {
-     let uchoice = getUserChoice('paper');
+     let uchoice = getUserChoice('bomb'.toLowerCase());
     let computerChoise = getComputerChoise();
-    return console.log( `${computerChoise}  ${uchoice} ${determineWinner(uchoice,computerChoise)}`)
+    return console.log( `${computerChoise}  ${uchoice} ${determineWinner(uchoice,computerChoise)}`);
 }
+
+
